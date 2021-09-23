@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Крестики-нолики</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        html {
+            background-color: cadetblue;
+            height: 100%;
+            margin-top: 50px;
+        }
+
+        .panel {
+            text-align: center;
+        }
+
+        #board {
+            position: relative;
+            height: 300px;
+            width: 300px;
+            margin: 30px auto 30px auto;
+            overflow: hidden;
+            display: grid;
+            grid-auto-columns: 1fr;
+            grid-auto-rows: 1fr;
+            grid-gap: 1px;
+        }
+
+        .field {
+            background-color: #5a65cc;
+            cursor: pointer;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.2em;
+        }
+
+        .free:hover {
+            background-color: #030d2b;
+        }
+
+        #modal {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(97, 108, 172, 0.5);
+        }
+
+        #modal__window {
+            position: relative;
+            top: 30%;
+            width: 30%;
+            margin: 0 auto;
+            padding: 5px 20px 20px;
+            background-color: #f8f6f6;
+            text-align: center;
+        }
+
+        button {
+            min-width: 100px;
+            border: 1px solid lightgray;
+            padding: 5px;
+            background-color: rgb(124, 125, 201);
+            font-size: 15pt;
+        }
+
+        button:hover {
+            box-shadow: 2px 1px 0 rgb(0, 0, 0);
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="panel">
+            <button class="renew">С начала</button>
+            <button onclick="window.location.href='/'">Назад</button>
+        </div>
+        <div id="board"></div>
+
+        <div id="modal" class="hidden">
+            <div id="modal__window">
+                <h5></h5>
+                <div id="modal__buttons">
+                    <button class="renew">Играть еще</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let players = ['X', 'O'];
+        let activePlayer = 0;
+
+        let board;
+        let step;
+        let size = 3;
+
+        function startGame() {
+            board = initiationBoard(size);
+
+            activePlayer = players[0];
+            renderBoard(board);
+        };
+
+        function initiationBoard(dimention) {
+            let arr = [];
+            let element = '';
+
+            for (let i = 0; i < dimention; i++) {
+                arr.push([]);
+
+                for (let j = 0; j < dimention; j++) {
+                    arr[i].push(element);
+                }
+            }
+            return arr;
+        }
+
+        function click(row, col) {
+            if (activePlayer === 0) {
+                activePlayer = 1;
+            } else {
+                activePlayer = 0;
+            };
+
+            step = players[activePlayer];
+            board[row][col] = step;
+            renderBoard(board);
+
+            let winner = activePlayer;
+            let down = 0;
+            let up = 0;
+
+            for (let i = 0; i < size; i++) {
+                let sumRow = 0;
+                let sumCol = 0;
+
+                for (let j = 0; j < size; j++) {
+                    if (board[i][j] === step) sumRow++;
+                    if (board[j][i] === step) sumCol++;
+
+                    if (i == j && board[i][j] === step) {
+                        down++;
+                    }
+                    if (i + j === size - 1 && board[i][j] === step) {
+                        up++;
+                    }
+                }
+
+                if (sumRow === size || sumCol === size || down === size || up === size) {
+                    showWinner(winner);
+                }
+            }
+        };
+
+        window.addEventListener('load', startGame);
+
+        let boardEl = document.getElementById('board');
+        let modalEl = document.getElementById('modal');
+        let renewBtn = document.getElementsByClassName('renew');
+
+        for (let btn of renewBtn) {
+            btn.addEventListener('click', function () {
+                if (!modalEl.classList.contains('hidden')) {
+                    modalEl.classList.add('hidden');
+                }
+                startGame();
+            });
+        }
+
+        boardEl.addEventListener('click', function (event) {
+            let targetClasses = event.target.classList;
+            let targetData = event.target.dataset;
+            if (targetClasses.contains('field') && !targetClasses.contains('busy')) {
+                click(targetData.row, targetData.col);
+            }
+        });
+
+        function showWinner(winner) {
+            let header = modalEl.getElementsByTagName('h5')[0];
+            header.textContent = `Победил игрок номер  - ${winner + 1}!`;
+            modalEl.classList.remove('hidden');
+        }
+
+        function renderBoard(board) {
+            const fields = [];
+            for (let [i, row] of board.entries()) {
+                for (let [j, value] of row.entries()) {
+                    fields.push(`
+        <div class="field ${value ? 'busy' : 'free'}" 
+            data-row="${i}" 
+            data-col="${j}"
+            style="grid-row:${i + 1};grid-column:${j + 1};"
+        >
+        ${value || ''}
+        </div>
+        `);
+                }
+            }
+            boardEl.innerHTML = fields.join('');
+        }
+    </script>
+</body>
+
+</html>
