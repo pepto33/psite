@@ -25,11 +25,10 @@
 				                <strong>' . $row['postTitle'] . '</strong>
 				            </h3>
 				            <p>' . $row['postDesc'] . '</p>
-				            <p>от
-				                <a>
-				                    <strong>' . $row['username'] . '</strong>
-				                </a>, ' . date('Y-m-d H:i:s', strtotime($row['postDate'])) . '</p>
-				            <a href="viewpost.php?id=' . $row['postID'] . '" class="btn btn-success btn-md mb-3 bg-info">Читать</a>
+							<a class="text-dark font-weight-bold" href="viewpost.php?id=' . $row['postID'] . '">Читать дальше...</a>
+				            <p>от <a <i class="fa fa-user text-dark"> <strong>' .  $row['username'] . '</strong> </a>, 
+							<a <i class="fa fa-calendar text-dark font-weight-normal"> ' . date('Y.m.d H:i', strtotime($row['postDate'])) . '</a>
+				            </p>
 				        </div>
 				    </div>
 				    <hr>';

@@ -4,7 +4,6 @@ $stmt = $db->prepare('SELECT * FROM blog_posts bp, blog_members bm WHERE bp.memb
 $stmt->execute(array(':postID' => $_GET['id']));
 $row = $stmt->fetch();
 
-//if post does not exists redirect user.
 if ($row['postID'] == '') {
     header('Location: ./');
     exit;
@@ -23,9 +22,9 @@ if ($row['postID'] == '') {
         <div class="row">
             <div class="col-lg-8">
               <div class="panel-heading">
-                <h1><a href="">' . $row['postTitle'] . '</a></h1>
+                <h1><a  class="text-dark" href="">' . $row['postTitle'] . '</a></h1>
                 <p class=""><i class="fa fa-user"></i> от ' . $row['username'] . '</p>
-                <p><i class="fa fa-calendar"></i> опубликовано ' . date('Y-m-d H:i:s', strtotime($row['postDate'])) . ' в ' . date('h:i A', strtotime($row['postDate'])) . '</p>
+                <p><i class="fa fa-calendar"></i> опубликовано ' . date('Y.m.d H:i', strtotime($row['postDate'])) . '</p>
                 </div>  
 					
                 <hr>
