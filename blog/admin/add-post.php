@@ -1,9 +1,8 @@
 <?php include('admin_header.php'); ?>
 <main role="main" class="flex-shrink-0">
 	<div class="container mb-5">
-		<h3>Добавить пост</h3>
+		<h1>Добавить пост</h1>
 		<?php
-		//if form has been submitted process it
 		if (isset($_POST['submit'])) {
 			$target_dir = "uploads/";
 			$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -47,7 +46,6 @@
 			}
 			if (!isset($error)) {
 				try {
-					//insert into database
 					$stmt = $db->prepare('INSERT INTO blog_posts (memberID,postTitle,postDesc,postCont,postDate,thumbnail) VALUES (:memberID, :postTitle, :postDesc, :postCont, :postDate, :thumbnail)');
 					$stmt->execute(array(
 						':memberID' => $_SESSION['memberID'],
@@ -57,7 +55,6 @@
 						':postDate' => date('Y-m-d H:i:s'),
 						':thumbnail' => $target_file
 					));
-					//redirect to index page
 					header('Location: index.php?action=added');
 					exit;
 				} catch (PDOException $e) {

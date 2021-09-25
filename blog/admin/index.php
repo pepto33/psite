@@ -1,9 +1,7 @@
 <?php include('admin_header.php');
-//if not logged in redirect to login page
 if (!$user->is_logged_in()) {
 	header('Location: login.php');
 }
-//show message from add / edit page
 if (isset($_GET['delpost'])) {
 	$stmt = $db->prepare('DELETE FROM blog_posts WHERE postID = :postID');
 	$stmt->execute(array(':postID' => $_GET['delpost']));
@@ -15,13 +13,12 @@ if (isset($_GET['delpost'])) {
 	<div class="container">
 		<hr>
 		<?php
-		//show message from add / edit page
 		if (isset($_GET['action'])) {
 			echo '<h3>Post ' . $_GET['action'] . '.</h3>';
 		}
 		?>
 		<table class="table table-bordered table-hover table-striped">
-			<tr>
+			<tr class="thead-dark">
 				<th>Заголовок</th>
 				<th>Автор</th>
 				<th>Дата</th>
@@ -34,7 +31,6 @@ if (isset($_GET['delpost'])) {
 				else
 					$stmt = $db->query('SELECT * FROM blog_posts bp, blog_members bm WHERE bp.memberID = bm.memberID ORDER BY postID DESC');
 				while ($row = $stmt->fetch()) {
-
 					echo '<tr>';
 					echo '<td>' . $row['postTitle'] . '</td>';
 					echo '<td>' . $row['username'] . '</td>';
