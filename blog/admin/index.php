@@ -5,16 +5,16 @@ if (!$user->is_logged_in()) {
 if (isset($_GET['delpost'])) {
 	$stmt = $db->prepare('DELETE FROM blog_posts WHERE postID = :postID');
 	$stmt->execute(array(':postID' => $_GET['delpost']));
-	header('Location: index.php?action=deleted');
+	header('Location: index.php?action=удален');
 	exit;
 }
 ?>
 <main role="main" class="flex-shrink-0">
 	<div class="container">
-		<hr>
+		<h4 class="text-center btn btn-lg btn-secondary btn-block">Посты</h4>
 		<?php
 		if (isset($_GET['action'])) {
-			echo '<h3>Post ' . $_GET['action'] . '.</h3>';
+			echo '<h3>Пост ' . $_GET['action'] . '.</h3>';
 		}
 		?>
 		<table class="table table-bordered table-hover table-striped">
@@ -37,8 +37,8 @@ if (isset($_GET['delpost'])) {
 					echo '<td>' . date('Y-m-d H:i:s', strtotime($row['postDate'])) . '</td>';
 			?>
 					<td>
-						<a href="edit-post.php?id=<?php echo $row['postID']; ?>">изменить</a> |
-						<a href="javascript:delpost('<?php echo $row['postID']; ?>','<?php echo $row['postTitle']; ?>')">удалить</a>
+						<a class="text-dark font-weight-bold" href="edit-post.php?id=<?php echo $row['postID']; ?>">Изменить</a> |
+						<a class="text-dark font-weight-bold" href="javascript:delpost('<?php echo $row['postID']; ?>','<?php echo $row['postTitle']; ?>')">Удалить</a>
 					</td>
 			<?php
 					echo '</tr>';
@@ -48,8 +48,7 @@ if (isset($_GET['delpost'])) {
 			}
 			?>
 		</table>
-		<br>
-		<p align="center"><a href='add-post.php' class='btn btn-primary'>Добавит пост</a></p>
+		<p align="center"><a href='add-post.php' class='btn btn-lg btn-secondary btn-block'>Добавит пост</a></p>
 	</div>
 </main>
 

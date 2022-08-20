@@ -1,0 +1,107 @@
+@font-face {
+	font-family: 'Digital7'; 
+	src: url(/pages//clock1/digital-7.ttf); 
+}
+body, html {
+  background: #000;
+  color: #FFF;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'LED BOARD REVERSED', 'Digital7', sans-serif;
+}
+.container {
+  display: block;
+  margin: 1em auto;
+}
+
+#copyright {
+  text-align: center;
+  font-size: .8em;
+  margin-top: 5em;
+}
+a{
+  text-decoration: none;
+    color: #555;
+}
+
+a:visited{
+  color: #555;
+}
+a:hover{
+  color:#222;
+}
+button {
+  background: #000;
+  color: #555;
+  text-transform: uppercase;
+  width: 200px;
+  height: 50px;
+  border: none;
+  outline: none;
+}
+button:hover {
+  color: #444;
+  transition: color .5s;
+  cursor: pointer;
+}
+#time {
+  font-size: 28em;
+  margin: 0.3em 0.3em;
+}
+#date {
+  font-size: 2em;
+  margin-bottom: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #555;
+}
+ul {
+  font-size: 1.5em;
+  color: #333;
+}
+ul li{
+  margin: 1em;
+  display: inline-block;
+}
+.glow {
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+/*
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e50022, 0 0 40px #e50022, 0 0 50px #e50022, 0 0 60px #e50022, 0 0 70px #e50022;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #e20000, 0 0 40px #e20000, 0 0 50px #e20000, 0 0 60px #e20000, 0 0 70px #e20000, 0 0 80px #e20000;
+  }
+}
+*/
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #00e54c, 0 0 20px #00e54c, 0 0 25px #00e54c, 0 0 30px #00e54c, 0 0 35px #00e54c;
+  }
+
+  to {
+    text-shadow: 0 0 15px #fff, 0 0 20px #078b33, 0 0 25px #078b33, 0 0 30px #078b33, 0 0 35px #078b33, 0 0 40px #078b33, 0 0 45px #078b33;
+  }
+}
+
+/* 
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00e54c, 0 0 40px #00e54c, 0 0 50px #00e54c, 0 0 60px #00e54c, 0 0 70px #00e54c;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #078b33, 0 0 40px #078b33, 0 0 50px #078b33, 0 0 60px #078b33, 0 0 70px #078b33, 0 0 80px #078b33;
+  }
+} */
+
+
+
+

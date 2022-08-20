@@ -1,0 +1,91 @@
+.footer-main {
+    background-color: #262626;
+}
+.footer-hr {
+    background-color: gray;
+    height: 1px;
+}
+.footer-contents {
+    max-width: 1022px;
+}
+.footer-text {
+    font-size: 13px;
+    font-weight: 400;
+    text-decoration: none;
+}
+.footer-text-bottom {
+    font-size: 11px;
+    font-weight: 400;
+    text-decoration: none;
+}
+.footer-text:hover {
+    text-decoration: none;
+}
+.footer-text-bottom:hover {
+    text-decoration: none;
+}
+.lang-selector {
+    border-radius: 3px;
+    border-color: #3b3b3b;
+    color: white;
+    font-size: 13px;
+    padding: 10px 70px 10px 50px;
+    background: url(/sites/ubereats/img/arrow-down.svg) 93% / 8% no-repeat #5c5c5c;
+    width: 227px;
+    height: 40px;
+}
+.lang-selector:focus {
+    outline: none;
+}
+.hashtag {
+    text-decoration: none;
+    color: white;
+    padding: -3px;
+}
+.hashtag1 {
+    text-decoration: none;
+    color: #49A144;
+}
+.hashtag:hover {
+    text-decoration: none;
+    color: lightgray
+}
+.scroller-area {
+    position: fixed;
+    bottom: 32px;
+    right: 8px;
+    z-index: 2;
+    width: 80px;
+    height: 80px;
+    background: #5cbc61 url(/sites/ubereats/img/arrow-up.svg) no-repeat;
+    background-position: center center;
+    border-radius: 5px;
+    display: block;
+    transition: color 0.3s;
+    cursor: pointer;
+    margin-right: 350px;
+}
+.scroller-area:hover {
+    background-color: #3da142;
+}
+.scroller-area:active {
+    background-color: #48b64d;
+}
+.lang-selector-container {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 24px;
+  margin-left: -16px;
+}
+.lang-selector-container img {
+  position: relative;
+  left: 30px;
+}
+@media screen and (max-width: 576px) {
+    .scroller-area {
+    width: 64px;
+    height: 64px;
+    display: block;
+    }
+}

@@ -1,0 +1,22 @@
+        body {
+            background-color: darkgray;
+        }
+        .mainDiv {
+            display: flex;
+        }
+
+        .cBox1 {
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            margin-right: 10px;
+        }
+
+        .cBox2 {
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+        }
+        #cLink {
+            cursor: pointer;
+        }

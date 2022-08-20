@@ -1,10 +1,11 @@
 <?php include('admin_header.php'); ?>
+
 <main role="main" class="flex-shrink-0">
 	<div class="container mb-5">
-		<h1>Добавить пост</h1>
+		<h4 class="text-center mt-5">Добавить пост</h4>
 		<?php
 		if (isset($_POST['submit'])) {
-			$target_dir = "uploads/";
+			$target_dir = "../uploads/";
 			$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 			$uploadOk = 1;
 			$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
@@ -25,7 +26,7 @@
 				$imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 				&& $imageFileType != "gif"
 			) {
-				echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+				echo "Только JPG, JPEG, PNG & GIF файлы можно загрузить.";
 				$uploadOk = 0;
 			}
 			if ($uploadOk == 0) {
@@ -50,12 +51,12 @@
 					$stmt->execute(array(
 						':memberID' => $_SESSION['memberID'],
 						':postTitle' => $postTitle,
-						':postDesc' => $postDesc,
-						':postCont' => $postCont,
+						':postDesc' => nl2br($postDesc),
+						':postCont' => nl2br($postCont),
 						':postDate' => date('Y-m-d H:i:s'),
 						':thumbnail' => $target_file
 					));
-					header('Location: index.php?action=added');
+					header('Location: index.php?action=добавлен');
 					exit;
 				} catch (PDOException $e) {
 					echo $e->getMessage();
@@ -68,31 +69,24 @@
 			}
 		}
 		?>
-		<form action='' method='post' enctype='multipart/form-data'>
+		<form action='' method='post' enctype='multipart/form-data' class=" w-50 m-auto">
 			<div class="form-group">
 				<label>Заголовок</label><br>
-				<input type='text' name='postTitle' required>
-				<div class="form-group">
-					<label>Картинка</label><br>
-					<input type="file" class="form-control-file" name="fileToUpload" id="fileToUpload" required>
-				</div>
-				<div class="form-group">
-					<label>Описание</label><br>
-					<textarea name='postDesc' cols='80' rows='4'><?php if (isset($error)) {
-																		echo $_POST['postDesc'];
-																	} ?></textarea>
-				</div>
-				<div class="form-group">
-					<label>Содержание</label><br>
-				</div>
-				<div class="form-group">
-					<textarea name='postCont' cols='80' rows='13'><?php if (isset($error)) {
-																		echo $_POST['postCont'];
-																	} ?></textarea>
-				</div>
-				<input type='submit' name='submit' value='Отправить' class='btn btn-primary'>
+				<input type='text' name='postTitle' class="w-100" required>
+				<label>Картинка</label><br>
+				<input type="file" class="btn btn-lg btn-secondary btn-block" name="fileToUpload" id="fileToUpload" required>
+				<label>Описание</label><br>
+				<textarea name='postDesc' cols='73' rows='4'><?php if (isset($error)) {
+																	echo $_POST['postDesc'];
+																} ?></textarea>
+				<label>Содержание</label><br>
+				<textarea name='postCont' cols='73' rows='13'><?php if (isset($error)) {
+																	echo $_POST['postCont'];
+																} ?></textarea>
+				<p align="center"><input type='submit' name='submit' value='Отправить' class='btn btn-lg btn-secondary btn-block'></p>
+			</div>
 		</form>
 	</div>
-	</div>
 </main>
+
 <?php include('../includes/bfooter.php') ?>

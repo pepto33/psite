@@ -1,0 +1,22 @@
+/* @font-face {
+    font-family: 'Roboto';
+    src: url("fonts/roboto-regular.ttf") format("truetype"),
+         url('fonts/Roboto-Regular.woff2') format('woff2'),
+         url('fonts/Roboto-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto - Light';
+    src: url("fonts/Robotolight.ttf") format("truetype"),
+         url('fonts/Robotolight.woff2') format('woff2'),
+         url('fonts/Robotolight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+} */
+
+body{
+    max-width: 1219px;
+    margin: 0 auto;
+}

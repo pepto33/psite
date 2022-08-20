@@ -1,0 +1,28 @@
+html {
+    background-color: black;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    max-width: 1124px;
+    margin: 0 auto;
+}
+.bbody{
+    max-width: 972px;
+    padding: 0; 
+}
+.cardp:hover {
+    background-color:aliceblue
+}
+.cardp-text1 {
+    font-size: 16px;
+    line-height: 24px;
+}
+.cardp-text2 {
+    font-size: 14px;
+    line-height: 21px;
+    color: #626262;
+}
+.cardp-text3 {
+    font-size: 13px;
+    line-height: 21px;
+}

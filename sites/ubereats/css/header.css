@@ -1,0 +1,42 @@
+.navp {
+    max-width: 1124px;
+    margin: 0 auto;
+    box-shadow: 0 0 16px gray;
+    height: 72px;  
+}
+.nav-logo {
+    padding-left: 50px;
+}
+.nav-btn {
+    padding-right: 120px;
+}
+.nav-btn button {
+    border-radius: 0%;
+    border-color: #E0E0E0;
+    font-size: 13px;
+    line-height: 24px;
+    font-weight: 600;
+    color: black;
+}
+.nav-element {
+    margin: auto 0.9rem;
+}
+.search-input {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #cacaca;
+}
+.header-rest {
+background: url(/sites/ubereats/img/restaurant/s-header.jpg);
+    max-width: 1124px;
+    margin: 0 auto;
+    height: 364px;
+    margin-top: 72px;
+}
+.card-restheader {
+    max-width: 389px;
+    height: 204px;
+    display: inline-block;
+    margin: 80px;
+}

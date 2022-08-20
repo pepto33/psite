@@ -1,0 +1,206 @@
+<style>
+    .head-row {
+        display: none;
+    }
+</style>
+
+<body style="background-color: black;">
+    <main class="mainpage mt-5">
+        <h1><br>27 важных однострочных функций JavaScript, используемых
+            разработчиками ежедневно</h1>
+        <div>
+            <h4 id="h-1">1. Копирование в буфер&nbsp;обмена</h4>
+            <p>Полезная однострочная функция JavaScript, с помощью которой можно легко
+                скопировать любой текст в буфер обмена.</p>
+            <pre
+                class="wp-block-code"><code>const copyToClipboard = (text) =&gt; navigator.clipboard.writeText(text);<br><br>copyToClipboard("This Sring is Copied To Clipboard.");</code></pre>
+            <h4 id="h-2">2. Получение случайного числа в определенном диапазоне</h4>
+            <p>Важная функция JavaScript для генерации случайного числа в определенном
+                диапазоне
+                чисел. В качестве аргументов вы указываете минимальное и максимальное
+                значение,
+                а однострочная функция возвращает случайное число из заданного диапазона.
+            </p>
+            <pre
+                class="wp-block-code"><code>const randomNumberInRange = (min = 0, max = 100) =&gt; Math.floor(Math.random() * (max - min + 1)) + min;<br><br>randomNumberInRange()<br>// Результат: Диапазон случайных чисел по умолчанию составляет 0–100, поэтому вы получите число от 0 до 100.<br>randomNumberInRange(100, 200)<br>// Результат: Вы получите случайное число в диапазоне от 100 до 200, где 100 — минимальное значение, а 200 — максимальное.</code></pre>
+            <h4 id="h-3-rgb">3. Преобразование RGB в шестнадцатеричный код</h4>
+            <p>Полезная функция, которая используется для преобразования RGB в
+                шестнадцатеричный
+                код.</p>
+            <pre
+                class="wp-block-code"><code>const rgbToHex = (r, g, b) =&gt; "#" + ((1 &lt;&lt; 24) + (r &lt;&lt; 16) + (g &lt;&lt; 8) + b).toString(16).slice(1);<br><br>rgbToHex(0, 51, 255); <br>// Результат: #0033ff</code></pre>
+            <h4 id="h-4">4. Прокрутка к верху&nbsp;страницы</h4>
+            <p>Еще одна полезная функция JavaScript, которая используется для автоматической
+                прокрутки к верху веб-страницы.</p>
+            <pre
+                class="wp-block-code"><code>const goToTop = () =&gt; window.scrollTo(0, 0);<br><br>goToTop();</code></pre>
+            <h4 id="h-5">5. Нахождение количества промежуточных дней между двумя&nbsp;датами
+            </h4>
+            <p>Следующая функция очень полезна при работе с календарем/датами в JavaScript.
+                Найдите количество промежуточных дней между двумя заданными датами,
+                используя
+                следующий код:</p>
+            <pre
+                class="wp-block-code"><code>const dayDif = (date1, date2) =&gt; Math.ceil(Math.abs(date1.getTime() - date2.getTime()) / 86400000)<br><br>dayDif(new Date("2020-10-21"), new Date("2021-10-22"))<br>// Результат: 366</code></pre>
+            <h4 id="h-6">6. Генерация случайных шестнадцатеричных кодов&nbsp;цветов</h4>
+            <p>С помощью этой функции можно генерировать случайные шестнадцатеричные коды
+                цветов, что очень пригодится при работе над фронтенд-проектами.</p>
+            <pre
+                class="wp-block-code"><code>const randomHex = () =&gt; `#${Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, "0")}`;<br><br>console.log(randomHex());<br>// Результат: #92b008</code></pre>
+            <h4 id="h-7">7. Проверка того, является ли указанный день&nbsp;будним</h4>
+            <p>С помощью этой функции вы можете проверить, является ли дата, которую вы
+                передаете в качестве аргумента, будним или выходным днем.</p>
+            <pre
+                class="wp-block-code"><code>const isWeekday = (date) =&gt; date.getDay() % 6 !== 0;<br><br>console.log(isWeekday(new Date(2021, 0, 11)));<br>// Результат: true(понедельник)<br>console.log(isWeekday(new Date(2021, 0, 10)));<br>// Результат: false(воскресенье)</code></pre>
+            <h4 id="h-8">8. Преобразование значений температуры по Фаренгейту /&nbsp;Цельсию
+            </h4>
+            <p>Если в вашем проекте указывается температура, эти две функции JavaScript
+                здорово
+                вам пригодятся. Они помогут преобразовать значение по Фаренгейту в значение
+                по
+                Цельсию и наоборот.</p>
+            <pre
+                class="wp-block-code"><code>const celsiusToFahrenheit = (celsius) =&gt; celsius * 9/5 + 32;<br>const fahrenheitToCelsius = (fahrenheit) =&gt; (fahrenheit - 32) * 5/9;<br><br>// Примеры:<br>celsiusToFahrenheit(15);    // 59<br>celsiusToFahrenheit(0);     // 32<br>celsiusToFahrenheit(-20);   // -4<br><br>fahrenheitToCelsius(59);    // 15<br>fahrenheitToCelsius(32);    // 0</code></pre>
+            <h4 id="h-9-apple">9. Проверка наличия у пользователя устройства от&nbsp;Apple
+            </h4>
+            <p>Во многих проектах нам необходимо реализовывать функции на базе определенных
+                устройств. Вы можете применить эту функцию, чтобы узнать, оперирует ли
+                пользователь устройством от Apple или нет.</p>
+            <pre
+                class="wp-block-code"><code>const isAppleDevice = /Mac|iPod|iPhone|iPad/.test(navigator.platform);<br><br>console.log(isAppleDevice);<br>// Результат: возвращает true, если у пользователя устройство от Apple</code></pre>
+            <h4 id="h-10">10. Получение времени из&nbsp;даты</h4>
+            <p>Вы можете использовать метод&nbsp;.toTimeString() и, разделив строку в нужном
+                месте, получить время из даты, которую предоставляете, или текущее время.
+            </p>
+            <pre
+                class="wp-block-code"><code>const timeFromDate = date =&gt; date.toTimeString().slice(0, 8);<br><br>console.log(timeFromDate(new Date(2021, 0, 10, 17, 30, 0))); <br>// Результат: "17:30:00"<br>console.log(timeFromDate(new Date()));<br>// Результат: залоггит текущее время</code></pre>
+            <h4 id="h-11-html">11. Извлечение HTML из&nbsp;текста</h4>
+            <p>Очень удобная однострочная функция JavaScript, которая важна еще и по
+                соображениям безопасности. Пользователи могут вводить значения на основе
+                тегов.
+                При приеме пользовательского ввода вы можете извлекать любые HTML-элементы
+                из
+                текста, введенного пользователем, с помощью DOMParser.</p>
+            <pre
+                class="wp-block-code"><code>const stripHtml = html =&gt; (new DOMParser().parseFromString(html, 'text/html')).body.textContent || '';<br><br>stripHtml('&lt;h1&gt;Hello &lt;strong&gt;World&lt;/strong&gt;!!!&lt;/h1&gt;');<br>// Результат: Hello World!!!</code></pre>
+            <h4 id="h-12">12. Переключение “показать/скрыть элемент”</h4>
+            <p>Вы можете легко переключать функцию показа/скрытия элемента с помощью этого
+                однострочного метода, используя значение свойства CSS display.</p>
+            <pre
+                class="wp-block-code"><code>const toggleElementDisplay = element =&gt; element.style.display = (element.style.display === "none" ? "block" : "none");<br><br>toggleElementDisplay(document.body)<br>// // Результат: если тело страницы присутствовало ранее, оно должно быть невидимым, и при повторном выполнении команды его следует переключить.</code></pre>
+            <h4 id="h-13">13. Разворот&nbsp;строки</h4>
+            <p>Вы можете развернуть строку в одном ряду, используя методы
+                <code>split</code>,
+                <code>join</code> и <code>reverse</code>.
+            </p>
+            <pre
+                class="wp-block-code"><code>const stringReverse = str =&gt; str.split("").reverse().join("");<br><br>stringReverse('elcitra ym ekil uoy epoh i');<br>// Результат: i hope you like my article</code></pre>
+            <h4 id="h-14">14. Выделение строки заглавной буквой</h4>
+            <p>Поскольку в JavaScript нет встроенного метода для этого действия, вы можете
+                выделить строку заглавной буквой с помощью этой однострочной функции.</p>
+            <pre
+                class="wp-block-code"><code>const capitalize = str =&gt; str.charAt(0).toUpperCase() + str.slice(1);<br><br>capitalize("i hope you like my article.");<br>// I hope you like my article.</code></pre>
+            <h4 id="h-15">15. Округление десятичных дробей до определенного числа знаков
+                после&nbsp;запятой</h4>
+            <p>Когда вы имеете дело с суммами, очень важно правильно проводить вычисления с
+                десятичными дробями. Использование метода округления десятичных дробей до
+                фиксированного числа десятичных знаков — непростая задача в JavaScript.
+                Встроенный в JavaScript метод toFixed() может легко справиться с такой
+                задачей,
+                но в некоторых случаях он выдает странные результаты из-за особенностей
+                арифметики с плавающей запятой.</p>
+            <p>Чтобы избежать этой проблемы, можете подать числа в экспоненциальном
+                представлении и использовать Math.round() для получения десятичной дроби,
+                округленной до заданного количества знаков после запятой.</p>
+            <pre
+                class="wp-block-code"><code>// Поведение функции по умолчанию toFixed в Javascript:<br>Number((1.005).toFixed(2)) //outputs 1 instead of 1.01<br>Number((1.555).toFixed(2)) //outputs 1.55 instead of 1.56<br><br>const round = (n, d) =&gt; Number(Math.round(n + "e" + d) + "e-" + d);<br><br>round(1.005, 2) //1.01<br>round(1.555, 2) //1.56</code></pre>
+            <h4 id="h-16">16. Перемешивание массива</h4>
+            <p>Вы можете использовать нижеуказанный код для перемешивания массива. В нем
+                используются методы <code>sort</code> и <code>random</code>.</p>
+            <pre
+                class="wp-block-code"><code>const shuffleArray = (arr) =&gt; arr.sort(() =&gt; 0.5 - Math.random());<br><br>console.log(shuffleArray(&#091;1, 2, 3, 4]));<br>// Результат: &#091; 1, 4, 3, 2 ]</code></pre>
+            <h4 id="h-17">17. Определение темного&nbsp;режима</h4>
+            <p>Узнайте, находится ли устройство пользователя в темном режиме, используя
+                следующий код.</p>
+            <pre
+                class="wp-block-code"><code>const isDarkMode = window.matchMedia &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches;<br><br>console.log(isDarkMode) // Результат: True или False</code></pre>
+            <h4 id="h-18-url">18. Получение параметров запроса из&nbsp;URL</h4>
+            <p>Очень полезная функция для тех, кто имеет дело с url и параметрами запроса.
+                Вы
+                можете легко получить параметры запроса из url, передав url в качестве
+                аргумента
+                функции.</p>
+            <pre
+                class="wp-block-code"><code>const getParameters = (URL) =&gt; JSON.parse('{"' + decodeURI(URL.split("?")&#091;1]).replace(/"/g, '\\"').replace(/&amp;/g, '","').replace(/=/g, '":"') +'"}');<br><br>getParameters("https://www.google.de/search?q=cars&amp;start=40");<br>// Результат: { q: 'cars', start: '40' }</code></pre>
+            <h4 id="h-19">19. Получение среднего значения массива&nbsp;чисел</h4>
+            <p>JavaScript reducer позволяет вычислить среднее значение нескольких массивов в
+                одном ряду. Метод Reduce весьма полезен при написании однострочных решений
+                ряда
+                задач, таких как нахождение суммы или максимума в массиве чисел.</p>
+            <pre
+                class="wp-block-code"><code>const average = arr =&gt; arr.reduce((a, b) =&gt; a + b) / arr.length;<br><br>average(&#091;21, 56, 23, 122, 67])<br>//57.8</code></pre>
+            <h4 id="h-20">20. Проверка поддержки у текущего пользователя
+                событий&nbsp;касания
+            </h4>
+            <pre
+                class="wp-block-code"><code>const touchSupported = () =&gt; {<br>  ('ontouchstart' in window || window.DocumentTouch &amp;&amp; document instanceof window.DocumentTouch);<br>}<br><br>console.log(touchSupported());<br>// Результат: возвращает true, если события касания поддерживаются, false — если нет.</code></pre>
+            <h4 id="h-21">21. Определение порядкового номера дня в&nbsp;году</h4>
+            <p>Еще одна очень полезная функция JavaScript, относящаяся к работе с
+                датами/календарями. По сути, она позволяет узнать порядковый номер дня в
+                году.
+                Например, 6 февраля — 37-й день по счету из 365 дней в году.</p>
+            <pre
+                class="wp-block-code"><code>const dayOfYear = (date) =&gt;<br>  Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);<br><br>dayOfYear(new Date());<br>// Результат: 272</code></pre>
+            <h4 id="h-22-cookie">22. Получение значения файла cookie&nbsp;браузера</h4>
+            <p>Полезная короткая функция JavaScript, предназначенная для получения значения
+                cookie браузера.</p>
+            <pre
+                class="wp-block-code"><code>const cookie = name =&gt; `; ${document.cookie}`.split(`; ${name}=`).pop().split(';').shift();<br><br>cookie('_ga');<br>// Результат: "GA1.2.1929736587.1601974046"</code></pre>
+            <h4 id="h-23-cookie">23. Очистить все файлы cookie&nbsp;браузера</h4>
+            <p>Нужно очистить все cookie, хранящиеся на веб-странице? Получите доступ к
+                cookie с
+                помощью <code>document.cookie</code>и очистите их.</p>
+            <pre
+                class="wp-block-code"><code>const clearCookies = document.cookie.split(';').forEach(cookie =&gt; document.cookie = cookie.replace(/^ +/, '').replace(/=.*/, `=;expires=${new Date(0).toUTCString()};path=/`));</code></pre>
+            <h4 id="h-24-true-false">24. Получение случайного булева значения (true/false)
+            </h4>
+            <p>Эта функция вернет булево значение (true или false) с помощью метода
+                <code>Math.random()</code>. <code>Math.random</code>создаст случайное число
+                между 0 и 1, после чего мы проверяем, больше или меньше оно 0,5. Это
+                означает,
+                что вероятность получить true или false составляет 50/50.
+            </p>
+            <pre
+                class="wp-block-code"><code>const randomBoolean = () =&gt; Math.random() &gt;= 0.5;<br><br>console.log(randomBoolean());<br>// Результат: 50/50 при возврате true или false.</code></pre>
+            <h4 id="h-25">25. Удаление дубликатов в&nbsp;массиве</h4>
+            <p><strong>Sets</strong> в JavaScript хранят только уникальные элементы. Мы
+                можем
+                использовать такое поведение для удаления дубликатов из массива. Однако этот
+                прием работает только с массивами, хранящими примитивные данные. Поэтому вам
+                придется написать многострочное решение для удаления дубликатов в массивах,
+                хранящих объекты. Но, тем не менее, это вполне действенный метод удаления
+                дубликатов в простых сценариях.</p>
+            <pre
+                class="wp-block-code"><code>const removeDuplicates = (arr) =&gt; &#091;...new Set(arr)];<br><br>removeDuplicates(&#091;31, 56, 12, 31, 45, 12, 31]);<br>//&#091; 31, 56, 12, 45 ]</code></pre>
+            <h4 id="h-26">26. Проверка правильности даты</h4>
+            <p>Проверьте правильность введенной пользователем даты с помощью этой
+                Js-функции.
+            </p>
+            <pre
+                class="wp-block-code"><code>const isDateValid = (...val) =&gt; !Number.isNaN(new Date(...val).valueOf());<br><br>isDateValid("December 17, 1995 03:24:00");<br>// Результат: true</code></pre>
+            <h4 id="h-27">27. Получение случайного элемента из&nbsp;массива</h4>
+            <p>Эта однострочная функция возвращает случайный элемент из входного массива,
+                который вы передаете в качестве аргумента функции.</p>
+            <pre
+                class="wp-block-code"><code>const randomArrayItem = (arr) =&gt; arr&#091;Math.floor(Math.random() * arr.length)];<br><br>randomArrayItem(&#091;'lol', 'a', 2, 'foo', 52, 'Jhon', 'hello', 57]);<br>// Результат: случайный элемент из массива.</code></pre>
+            <h4 id="h-">Заключение</h4>
+            <p>Если у вас есть идеи по продолжению этого списка, напишите мне об этом в
+                комментариях. Я буду рад пополнить перечень полезных функций JavaScript
+                вашими
+                предложениями. Если вам понравилась статья и вы хотите видеть больше моих
+                материалов в будущем, подписывайтесь на мой аккаунт на Medium. Удачного
+                кодинга!
+            </p>
+        </div>
+    </main>
+</body>

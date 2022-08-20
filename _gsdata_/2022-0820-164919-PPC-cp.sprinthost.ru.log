@@ -1,0 +1,9 @@
+2022-08-20 16:49:19: Expanded 'file:///%GSDISK%/pepto/GoogleDrive/_PHP/psite' to 'file:///c:/pepto/GoogleDrive/_PHP/psite'
+2022-08-20 16:49:20: -- Analysis Started by User Command
+2022-08-20 16:49:26: Справа: On disk ftp://ftp.pepto.site:21 space required for sync is 2.05 KB, free space is unknown
+2022-08-20 16:49:26: Изменений: 1, Конфликтов: 0, Копий Времени: 0, Копий Состояния: 0, Ошибок: 0, All: 880
+2022-08-20 16:49:26: Left to Right: Copy File: 1 
+2022-08-20 16:49:26: == Sync Started by User Command
+2022-08-20 16:49:26: Start only 1 threads, limited by tasks to run
+2022-08-20 16:49:26: Скопировано поверх 'c:/pepto/GoogleDrive/_PHP/psite/pages/chess/chess.html' -> 'ftp://ftp.pepto.site:21/domains/pepto.site/public_html/pages/chess/chess.html' (17,985)
+2022-08-20 16:49:27: ===== Синхронизация завершена. Время 00:00:08, Скорость: 2.57 KB/s файлов/сек =====, Синхронизировано: 1, Ошибок: 0

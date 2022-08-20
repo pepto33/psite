@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/images/clock.png">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Часы</title>
+</head>
+
+<body>
+  <a href="/index.php">назад</a>
+  <div id="clock">
+    <div id="time" class="glow"></div>
+
+    <div id="date">
+      <span class="month"></span>
+      <span class="day"></span>,
+      <span class="year"></span>
+    </div>
+
+    <!--    <div class="container">
+      <button id="twelveHourBtn">12/24</button>
+    </div>
+  </div> -->
+
+    <div class="container">
+      <ul id="days">
+        <li><button id="twelveHourBtn">12/24</button></li>
+        <li class="monday">пн</li>
+        <li class="tuesday">вт</li>
+        <li class="wednesday">ср</li>
+        <li class="thursday">чт</li>
+        <li class="friday">пт</li>
+        <li class="saturday">сб</li>
+        <li class="sunday">вс</li>
+        <li><button id="secBtn">сек</button></li>
+      </ul>
+    </div>
+
+</body>
+<script src="clock.js" type="text/javascript"></script>
+
+</html>

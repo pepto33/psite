@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+@import '/sites/ubereats/css/style.css';
+@import '/sites/ubereats/css/restaurant.css';
+@import '/sites/ubereats/css/header.css';
+@import '/sites/ubereats/css/footer.css';
+
+.effect-milo:hover img {
+/*	width: -webkit-calc(100% + 60px);
+	width: calc(100% + 60px);
+*/	opacity: 1;
+	-webkit-transition: opacity 1.35s, -webkit-transform 1.35s;
+	transition: opacity 1.35s, transform 1.35s;
+	-webkit-transform: translate3d(0,0,0) scale(1.02);
+	transform: translate3d(0,0,0) scale(1.02);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+}
+
+.effect-milo img {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0) scale(1);
+	transform: translate3d(0,0,0) scale(1);
+}

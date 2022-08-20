@@ -1,0 +1,37 @@
+<style>
+    .head-row {
+        display: none;
+    }
+</style>
+<main class="abc">
+    <div class="divabc">
+        <p id="abc" onclick="setNewEntry(str_rand())">А</p>
+        <button class="btn" onclick="startAbc()">Старт</button>
+        <button class="btn" onclick="stopAbc()">Стоп</button>
+    </div>
+    <script>
+        let x;
+        let t = 0;
+        x = document.getElementById("abc");
+        function str_rand() {
+            var result = ''; var
+                words = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'; var max_position = words.length - 1; for (i = 0; i < 1; ++i) {
+                    position = Math.floor(Math.random() * max_position); result = result + words.substring(position, position + 1);
+                }
+            return result;
+        }
+        function setNewEntry(entry) {
+            $('#abc').html(entry);
+        }
+        function sec() {
+            setNewEntry(str_rand());
+        }
+        function startAbc() {
+            t = setInterval(sec, 3000);
+        }
+        function stopAbc() {
+            clearInterval(t);
+        }
+//        x.innerHTML = str_rand();
+    </script>
+</main>

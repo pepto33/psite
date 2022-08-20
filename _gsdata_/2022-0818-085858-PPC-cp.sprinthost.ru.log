@@ -1,0 +1,38 @@
+2022-08-18 08:58:58: Expanded 'file:///%GSDISK%/pepto/GoogleDrive/_PHP/psite' to 'file:///c:/pepto/GoogleDrive/_PHP/psite'
+2022-08-18 08:58:59: -- Analysis Started by User Command
+2022-08-18 08:59:03: Справа: On disk ftp://ftp.pepto.site:21 space required for sync is 2.05 KB, free space is unknown
+2022-08-18 08:59:03: Изменений: 2, Конфликтов: 0, Копий Времени: 0, Копий Состояния: 0, Ошибок: 0, All: 880
+2022-08-18 08:59:03: Left to Right: Copy File: 1 Delete File: 1 
+2022-08-18 08:59:03: == Sync Started by User Command
+2022-08-18 08:59:03: Удалён Файл ftp://ftp.pepto.site:21/domains/pepto.site/public_html/sfg/_sfpg_data/info/_sfpg_dir
+2022-08-18 08:59:03: Start only 1 threads, limited by tasks to run
+2022-08-18 08:59:03: Скопировано поверх 'c:/pepto/GoogleDrive/_PHP/psite/pages/chess/chess.html' -> 'ftp://ftp.pepto.site:21/domains/pepto.site/public_html/pages/chess/chess.html' (14,228)
+2022-08-18 08:59:04: Deleted Recycled: ftp://ftp.pepto.site:21/domains/pepto.site/public_html/_gsdata_/_saved_/js/dwatch.js
+2022-08-18 08:59:04: Deleted Recycled: ftp://ftp.pepto.site:21/domains/pepto.site/public_html/_gsdata_/_saved_/js/main.js
+2022-08-18 08:59:04: Deleted Recycled: ftp://ftp.pepto.site:21/domains/pepto.site/public_html/_gsdata_/_saved_/js/timerm.js
+2022-08-18 08:59:04: Deleted Recycled: ftp://ftp.pepto.site:21/domains/pepto.site/public_html/_gsdata_/_saved_/js/timerny.js
+2022-08-18 08:59:04: Deleted Recycled: ftp://ftp.pepto.site:21/domains/pepto.site/public_html/_gsdata_/_saved_/js/timerrev.js
+2022-08-18 08:59:04: Deleted Recycled: ftp://ftp.pepto.site:21/domains/pepto.site/public_html/_gsdata_/_saved_/pages/blk.html
+2022-08-18 08:59:04: Deleted Recycled: ftp://ftp.pepto.site:21/domains/pepto.site/public_html/_gsdata_/_saved_/pages/chess/chess.html
+2022-08-18 08:59:04: Deleted Recycled: ftp://ftp.pepto.site:21/domains/pepto.site/public_html/_gsdata_/_saved_/router.php
+2022-08-18 08:59:04: Deleted Recycled: ftp://ftp.pepto.site:21/domains/pepto.site/public_html/_gsdata_/_saved_/sfg/_sfpg_data/info/2012_09_21Концерт Аквариума/_sfpg_dir
+2022-08-18 08:59:04: Deleted Recycled: ftp://ftp.pepto.site:21/domains/pepto.site/public_html/_gsdata_/_saved_/sfg/_sfpg_data/info/_sfpg_dir
+2022-08-18 08:59:04: Deleted Recycled: ftp://ftp.pepto.site:21/domains/pepto.site/public_html/_gsdata_/_saved_/sfg/_sfpg_data/info/img01/0001.jpg
+2022-08-18 08:59:04: Deleted Recycled: ftp://ftp.pepto.site:21/domains/pepto.site/public_html/_gsdata_/_saved_/sfg/_sfpg_data/info/img01/0004.jpg
+2022-08-18 08:59:04: Deleted Recycled: ftp://ftp.pepto.site:21/domains/pepto.site/public_html/_gsdata_/_saved_/sfg/_sfpg_data/info/img01/_sfpg_dir
+2022-08-18 08:59:04: Deleted Recycled: ftp://ftp.pepto.site:21/domains/pepto.site/public_html/_gsdata_/_saved_/sfg/_sfpg_data/thumb/img01/0001.jpg
+2022-08-18 08:59:04: Deleted Recycled: ftp://ftp.pepto.site:21/domains/pepto.site/public_html/_gsdata_/_saved_/sfg/_sfpg_data/thumb/img01/0004.jpg
+2022-08-18 08:59:04: Deleted Recycled: ftp://ftp.pepto.site:21/domains/pepto.site/public_html/_gsdata_/_saved_/styles/styles.css
+2022-08-18 08:59:04: Deleted Recycled: ftp://ftp.pepto.site:21/domains/pepto.site/public_html/_gsdata_/_saved_/template.php
+2022-08-18 08:59:04: GsDeleteEmptyFoldersFS: /_gsdata_/_saved_/js
+2022-08-18 08:59:04: GsDeleteEmptyFoldersFS: /_gsdata_/_saved_/pages/chess
+2022-08-18 08:59:04: GsDeleteEmptyFoldersFS: /_gsdata_/_saved_/pages
+2022-08-18 08:59:05: GsDeleteEmptyFoldersFS: /_gsdata_/_saved_/sfg/_sfpg_data/info/2012_09_21Концерт Аквариума
+2022-08-18 08:59:05: GsDeleteEmptyFoldersFS: /_gsdata_/_saved_/sfg/_sfpg_data/info/img01
+2022-08-18 08:59:05: GsDeleteEmptyFoldersFS: /_gsdata_/_saved_/sfg/_sfpg_data/info
+2022-08-18 08:59:05: GsDeleteEmptyFoldersFS: /_gsdata_/_saved_/sfg/_sfpg_data/thumb/img01
+2022-08-18 08:59:05: GsDeleteEmptyFoldersFS: /_gsdata_/_saved_/sfg/_sfpg_data/thumb
+2022-08-18 08:59:05: GsDeleteEmptyFoldersFS: /_gsdata_/_saved_/sfg/_sfpg_data
+2022-08-18 08:59:06: GsDeleteEmptyFoldersFS: /_gsdata_/_saved_/sfg
+2022-08-18 08:59:06: GsDeleteEmptyFoldersFS: /_gsdata_/_saved_/styles
+2022-08-18 08:59:06: ===== Синхронизация завершена. Время 00:00:08, Скорость: 15.95 KB/s файлов/сек =====, Синхронизировано: 2, Ошибок: 0

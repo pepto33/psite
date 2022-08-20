@@ -1,8 +1,141 @@
-    main>.container {
-      padding: 60px 15px 0;
-    }
+body {
+  background-color: black;
+  cursor: url("/images/cur/Pulse Handwriting.cur"), default;
+}
+main > .container {
+  padding: 30px 15px 0;
+  background-color: rgb(238, 236, 214);
+}
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.coltitl img {
+  width: 100%;
+}
+.jumbotron {
+  margin: 12px auto;
+}
+div.jumbotron {
+  background-color: rgb(238, 236, 214);
+  max-width: 1140px;
+  align-items: center;
+  padding: 10px 10px 10px 10px;
+}
+.jumbotron img {
+  max-width: 100%;
+}
+.mainpage {
+  background-color: rgb(238, 236, 214);
+  max-width: 800px;
+  padding-left: 55px;
+  padding-right: 55px;
+  align-items: center;
+  margin: 0px auto;
+}
+.mainpage img {
+  max-width: 100%;
+  margin: 6px 0px 21px;
+}
+.mainpage a {
+  text-decoration: none;
+  color: brown;
+}
+.mainpage a:hover {
+  text-decoration: underline;
+  color: peru;
+}
+.coltitl a {
+  text-decoration: none;
+  color: black;
+}
+.coltitl a:hover {
+  color: peru;
+}
+.abc {
+  margin-top: 60px;
+}
+.divabc {
+  text-align: center;
+}
+#abc {
+  margin: 0px auto;
+  font-size: 28rem;
+  font-family: "Times New Roman", Times, serif;
+  color: #8190bd;
+  text-shadow: 10px 10px 20px black, 0 0 1em #9fb4f2;
+}
+#abc:hover,
+.btn:hover {
+  cursor: pointer;
+}
+.btn {
+  box-shadow: inset 0px 0px 9px 4px #9fb4f2;
+  background: linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+  background-color: #7892c2;
+  border-radius: 10px;
+  border: 2px solid #4e6096;
+  display: inline-block;
+  cursor: pointer;
+  color: #d3cccc;
+  font-family: Arial;
+  font-size: 12px;
+  /*      padding: 12px 37px; */
+  text-decoration: none;
+  text-shadow: 2px -2px 4px #283966;
+}
+.btn:hover {
+  background: linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+  background-color: #476e9e;
+}
+.btn:active {
+  position: relative;
+  top: 1px;
+}
+.remem {
+  border-radius: 20px;
+  background-color: #476e9e;
+  color: white;
+}
+.contact-form input {
+  background-color: rgb(238, 236, 214);
+}
+.contact-form textarea {
+  background-color: rgb(238, 236, 214);
+}
+.head-row {
+  border: 2px solid #4e6096;
+  max-width: 900px;
+  padding-left: 55px;
+  padding-right: 55px;
+  align-items: center;
+  margin: 0px auto;
+}
+.hb {
+  font-size: 10pt;
+  border: 2px solid #3c4149;
+  max-width: 900px;
+  padding-left: 55px;
+  padding-right: 55px;
+  align-items: center;
+  margin: 0px auto;
+}
+.elhide {
+  display: none;
+}
+#clock:hover {
+  cursor: pointer;
+}
+/*.modal-body, .modal-header, .modal-footer, .modal-title, */
+.modal-content {
+  text-align: center;
+  background-color: rgb(218, 213, 213);
+}
 
-    .footer>.container {
-      padding-right: 15px;
-      padding-left: 15px;
-    }
+@media (max-width: 1200px) {
+  div.jumbotron {
+    max-width: 90%;
+    align-items: center;
+    padding: 10px 10px 10px 10px;
+  }
+}
